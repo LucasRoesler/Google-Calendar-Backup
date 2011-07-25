@@ -13,7 +13,7 @@ import urllib2
 
 email = ''
 password = ''
-backup_foler = ''
+backup_folder = ''
 
 # log into google
 calendar_service = gdata.calendar.service.CalendarService()
@@ -44,6 +44,6 @@ for name, url in cals.iteritems():
     req.add_header('Authorization', 'GoogleLogin auth='+token)
     r = urllib2.urlopen(req)
     # create/open the ics file and write the retrieved ical to it.
-    local = open(backup_foler+name+'.ics',"w")
+    local = open(backup_folder+name+'.ics',"w")
     local.write(r.read())
     local.close()
